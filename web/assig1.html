@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>80% Red 20% Green</title>
+<style>
+  body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+  .container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+  }
+  .green {
+    width: 70%;
+    background-color: green;
+    padding-left: 20px;
+  }
+  .gray {
+    width: 30%;
+    background-color: gray;
+    padding-left: 20px;
+    padding-top: 40px;
+  }
+  .nav{
+    background-color: white;
+    padding-bottom: 80px;
+    border: 10px solid black;
+  }
+  #h{
+    color: red;
+    text-align: center;
+
+  }
+  #hh{
+    text-decoration: underline;
+  }
+</style>
+</head>
+<body>
+    <header>
+        <div class = "nav">
+            <h1 id = "h"> Java </h1>
+        </div>
+
+    </header>
+  <div class="container">
+    <div class="green">
+        <h2>What is Java ?</h2>
+        <p>Java is will known programming language</p>
+        <table border = "1">
+            <tr>
+                <th> Edition</th>
+                <th> description</th>
+            </tr>
+            <tr>
+                <td> JSE</td>
+                <td> java standerd edition</td>
+            </tr>
+        </table>
+        <hr>
+        <h2 id = "hh">Your opinion matters</h2>
+        <form  action = "" >
+            Name: <input type="text">
+            <br>
+            <input type="radio" /> male
+            <input type = "radio" /> female
+            <br>
+            <input type="submit" name="send data" value = "send data"
+        </form>
+    </div>
+    <div class="gray">
+        <h1>Navigate</h1>
+        <ul>
+            <li><a href = "www.link 1">link1</a></li>
+            <li><a href = "www.link2">link2</a></li>
+        </ul>
+    </div>
+  </div>
+</body>
+</html>

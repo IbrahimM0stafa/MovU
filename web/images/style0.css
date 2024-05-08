@@ -1,0 +1,14 @@
+body{
+    background-color:bisque;
+}
+h1{
+    color: blue;
+    text-shadow: 5px 5px 5px gray;
+    box-shadow:  5px 5px 5px black;
+}
+#table1 {
+    border: 2px solid yellow; /* Change black to your desired color */
+    margin-left: 40%;
+    margin-right: 50%;
+    position: relative;
+}
