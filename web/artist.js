@@ -41,7 +41,7 @@ const Artist = () => {
 };
 
 const Filmography = () => {
-    const personId = localStorage.getItem('selectedMovieId');
+    const personId = localStorage.getItem('selectedArtistId');
     if (personId) {
         fetch('https://api.themoviedb.org/3/person/' + personId + '/combined_credits?language=en-US', options)
             .then(response => {
