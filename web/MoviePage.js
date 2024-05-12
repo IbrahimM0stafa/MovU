@@ -118,37 +118,6 @@ const fetchCast = () => {
     .catch(err => console.error(err));
 };
 
-const searchAndStore = () => {
-    const input = document.getElementById("searchInput").value.trim();
-    const searchResultContainer = document.getElementById("search_result");
-    if (input === "") {
-        searchResultContainer.innerHTML = "";
-        return;
-    }
-    // Fetch data from TMDB API
-    fetch('https://api.themoviedb.org/3/search/multi?query='+input+'&include_adult=false&language=en-US&page=1', options)
-        .then(response => response.json())
-        .then(data => {
-            data.results.forEach(result => {
-                const item = document.createElement("div");
-                item.classList.add("search-item");
-                item.innerHTML = `<p>${result.name || result.title}</p>`;
-                item.addEventListener("click", function () {
-                    if (result.media_type === "movie") {
-                        localStorage.setItem("selectedMovieId", result.id);
-                    } else if (result.media_type === "person") {
-                        localStorage.setItem("selectedArtistId", result.id);
-                    }
-                    // You can perform further actions here, such as redirecting to a new page or displaying more details.
-                    console.log("Selected ID:", result.id);
-                });
-                searchResultContainer.appendChild(item);
-            });
-        })
-        .catch(error => {
-            console.error('Error fetching data:', error);
-        });
-}
 
 document.addEventListener('DOMContentLoaded', function() {
     
