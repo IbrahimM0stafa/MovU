@@ -118,6 +118,35 @@ const fetchCast = () => {
     .catch(err => console.error(err));
 };
 
+const fetchRecommendations = () => {
+    fetch(`https://api.themoviedb.org/3/movie/${movieId}/recommendations?language=en-US`, options)
+    .then(response => response.json())
+    .then(response => {
+        const recommendations = response.results.slice(0, 5); // Get the first 5 recommendations
+        const carouselItems = document.querySelectorAll('.carousel-item img');
+        
+        recommendations.forEach((recommendation, index) => {
+            const posterPath = recommendation.poster_path;
+            const imageUrl = posterPath ? `https://image.tmdb.org/t/p/w500/${posterPath}` : 'images/placeholder.jpg';
+            carouselItems[index].src = imageUrl; // Update the src attribute with the poster image URL
+            
+            // Add double-click event listener to update local storage movie ID
+            let clicks = 0;
+            carouselItems[index].addEventListener('click', function() {
+                clicks++;
+                if (clicks === 2) {
+                    localStorage.setItem('selectedMovieId', recommendation.id);
+                    window.location.href = 'MoviePage.html'; // Redirect to movie details page
+                    clicks = 0;
+                }
+                setTimeout(function() {
+                    clicks = 0;
+                }, 500); // Reset clicks after 500 milliseconds
+            });
+        });
+    })
+    .catch(err => console.error(err));
+};
 
 document.addEventListener('DOMContentLoaded', function() {
     
@@ -153,4 +182,4 @@ console.log(movieId);
 fetchMovieDetails();
 fetchCast();
 fetchAgeRestriction();
-searchAndStore();
+fetchRecommendations();
