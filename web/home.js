@@ -348,4 +348,17 @@ function searchItems() {
         results.appendChild(li);
     });
 }
+document.addEventListener('DOMContentLoaded', function() {
+  
+  var aboutUs = document.querySelector('.aboutUs');
+  var profile = document.querySelector('.profile');
+  aboutUs.addEventListener('click', function() {
+      
+      window.location.href = 'AboutUs.html';
+  });
+  profile.addEventListener('click', function() {
+      
+      window.location.href = 'login.html';
+  });
+});
 

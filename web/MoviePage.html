@@ -14,18 +14,17 @@
     <header>
         <img src="images/MOVU_LOGO.PNG" class="logo">
         <ul class="nav">
-            <li><a href="#"><i class="fa-solid fa-house"></i>Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#"><i class="fa-solid fa-right-to-bracket"></i>Login</a></li>
+            <li class="home"><a href="#"><i class="fa-solid fa-house"></i>Home</a></li>
+            <li class="aboutUs"><a href="#">About</a></li>
+            <li class="login"><a href="#"><i class="fa-solid fa-right-to-bracket"></i>Login</a></li>
         </ul>
         <div class="search-container">
             <div class="search">
-                <input type="text" id="searchInput" placeholder="Search">
+                <input type="text" id="searchInput" placeholder="Search" onkeyup="searchAndStore()">
                 <i class="fa-solid fa-magnifying-glass" id="searchButton"></i>
             </div>
             <div id="search_result"></div> <!-- This div will contain the search results -->
         </div>
-    </header>
     </header>
     <div class="banner">
         <div class="content active">
@@ -81,9 +80,9 @@
         </div>
         <a href="#" class="play"><i class="fa-solid fa-play"></i>Watch Trailer</a>
             <ul class="sci">
-                <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
-                <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
-                <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+                <li><a class="facebook" href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                <li><a class="youtube" href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                <li><a class="twitter" href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
             </ul>
         </div>
 
