@@ -147,6 +147,54 @@ const fetchRecommendations = () => {
     })
     .catch(err => console.error(err));
 };
+document.addEventListener('DOMContentLoaded', function() {
+    const playButton = document.querySelector('.play');
+    const closeButton = document.querySelector('.close');
+    const video = document.querySelector('iframe');
+    const trailer = document.querySelector('.trailer');
+
+    // Function to fetch trailer link and set it as video source
+    const fetchAndPlayTrailer = () => {
+        const movieId = localStorage.getItem('selectedMovieId');
+        if (!movieId) {
+            console.error('Movie ID not found in local storage');
+            return;
+        }
+        
+        const trailerUrl = `https://api.themoviedb.org/3/movie/${movieId}/videos?language=en-US`;
+        
+        fetch(trailerUrl, options)
+            .then(response => response.json())
+            .then(data => {
+                // Check if there are any videos available
+                if (data.results && data.results.length > 0) {
+                    const trailerVideo = data.results.find(video => video.type === 'Trailer');
+                    console.log(trailerVideo.key);
+                    if (trailerVideo) {
+                        video.src = `https://www.youtube.com/embed/${trailerVideo.key}`;
+                        trailer.classList.add('active'); // Show the trailer
+                        console.log(video.src);
+                    } else {
+                        console.error('Trailer not found for this movie');
+                    }
+                } else {
+                    console.error('No videos available for this movie');
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching trailer:', error);
+            });
+    };
+
+    // Event listener for "Watch Trailer" click
+    playButton.addEventListener('click', fetchAndPlayTrailer);
+
+    // Event listener for "Close" click
+    closeButton.addEventListener('click', () => {
+        video.src = ''; // Clear video source
+        trailer.classList.remove('active'); // Hide the trailer
+    });
+});
 
 document.addEventListener('DOMContentLoaded', function() {
     
