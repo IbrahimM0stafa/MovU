@@ -1,0 +1,161 @@
+/* {
+    text-decoration:none;
+}
+.navbar{
+    background: rgba(22, 22, 22);
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.navdiv{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+li{
+    list-style:none;
+    display: inline-block;
+}
+li a{
+    color:white;
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 25px;
+}
+*/
+body{
+    display: grid;
+    background-color: black;
+
+}
+.logo{
+    margin-right: 600px;
+}
+.dropdown button{
+    background-color: #1b1818;
+    border: 0;
+    /* color: black; */
+}
+.dropdown button:hover{
+    background-color: #5c5050;
+    border: 0;
+    /* color: black; */
+}
+
+.navBar{
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 5px;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    background-color: #1b1818;
+}
+
+.anchor_change {
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+}
+.menu{
+    width: 50%;
+    display: flex;
+    color: white;
+    justify-content: flex-end;
+    align-items: center;
+}
+.menu div{
+    margin: 0px 5px 0px 5px;
+    width: 150px;
+    border-radius: 5px;
+}
+.menu div:hover{
+    background-color: rgb(100, 0, 0);
+    cursor: pointer;
+}
+.menu div a:hover{
+    background-color: rgb(100, 0, 0);
+}
+.menu div i{
+    margin-top: 5px;
+}
+.menu input{
+    outline: none;
+    margin: 0px 5px 0px 5px;
+    width: 100%;
+    height: 80%;
+    border-radius: 10px;
+    text-indent: 5px;
+}
+.search{
+    position: absolute;
+}
+
+.movies{
+    width: 90%;
+    margin: auto;
+    justify-content: center;text-align: center;
+    margin-top: 50px;
+}
+
+
+/* banner  */
+.banner{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    /* height: 50px; */
+    background-color: black(0, 0, 0);
+    margin-left: 70px;
+    margin-top: 60px;
+    color: white;
+    margin-bottom: 30px;
+}
+/*
+h1{
+    border-bottom: 4px solid rgb(123, 22, 22);
+    /*padding-bottom: 10px;
+    /*border-top: 4px solid rgb(123, 22, 22) ;
+    display: inline-block; 
+}
+*/
+.banner >*{
+    margin-right: 10px;
+}
+
+.red_marker{
+    width: 0.4%;
+    height: 50px;
+    background-color: rgb(123, 22, 22);
+}
+
+.movieContainer{
+    display: grid;
+    height: 750px;
+    margin: auto;
+}
+
+.box{
+    width: 650px;
+    height:350px;
+    border-radius: 10px;
+    background-color: rgb(22, 22, 22);
+    display: flex;
+    margin-bottom: 40px;
+}
+.details{
+    color: aliceblue;
+    display: grid;
+    height: fit-content;
+    
+}
+
+.image{
+    width:250px;
+    height: 100%;
+}
+
+

@@ -1,0 +1,238 @@
+body{
+    display: grid;
+    background-color: black;
+    padding-top: 100px;
+}
+.logo{
+    margin-right: 600px;
+}
+.dropdown button{
+    background-color: #1b1818;
+    border: 0;
+    /* color: black; */
+}
+.dropdown button:hover{
+    background-color: #5c5050;
+    border: 0;
+    /* color: black; */
+}
+
+.navBar{
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 5px;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    background-color: #1b1818;
+}
+
+.anchor_change {
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+}
+.menu{
+    width: 50%;
+    display: flex;
+    color: white;
+    justify-content: flex-end;
+    align-items: center;
+}
+.menu div{
+    margin: 0px 5px 0px 5px;
+    width: 150px;
+    border-radius: 5px;
+}
+.menu div:hover{
+    background-color: rgb(100, 0, 0);
+    cursor: pointer;
+}
+.menu div a:hover{
+    background-color: rgb(100, 0, 0);
+}
+.menu div i{
+    margin-top: 5px;
+}
+.menu input{
+    outline: none;
+    margin: 0px 5px 0px 5px;
+    width: 100%;
+    height: 80%;
+    border-radius: 10px;
+    text-indent: 5px;
+}
+.search{
+    position: absolute;
+}
+
+.movies{
+    width: 90%;
+    margin: auto;
+    justify-content: center;text-align: center;
+    margin-top: 50px;
+}
+
+.artistContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: black;
+}
+
+.box {
+    width: 900px;
+    height: 900px;
+    border-radius: 10px;
+    background-color: rgb(22, 22, 22);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 120px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.details {
+    color: aliceblue;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.image {
+    width: 250px;
+    height: 300px;
+   
+}
+.movies{
+    width: 90%;
+    margin: auto;
+    justify-content: center;text-align: center;
+    margin-top: 50px;
+}
+
+
+/* banner  */
+.banner{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    /* height: 50px; */
+    background-color: black(0, 0, 0);
+    margin-left: 70px;
+    margin-top: 180px;
+    color: white;
+    margin-bottom: 30px;
+}
+
+.banner >*{
+    margin-right: 10px;
+}
+
+.red_marker{
+    width: 0.4%;
+    height: 50px;
+    background-color: rgb(123, 22, 22);
+}
+.movieContainer{
+    display: flex;
+}
+.moviesList, .Filmography{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    height: 450px;
+}
+.edit_movie{
+    /* border: white  solid 3px; */
+    position: relative;
+    width: 13%;
+    padding-bottom: 50px;
+    height: fit-content;
+    margin: 20px;
+    color: white;
+    background-color: #1b1818;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: small;
+    
+}   
+.edit_movie:hover{
+    cursor: pointer;
+    width: 14.5%;
+    transition: 1s;
+    transform: translateZ(50px);
+     /* Default background color */
+}
+.edit_movie:not(:hover){
+    width: 13%;
+    transition: 1s;
+    transform: translateX(0,0);
+}
+
+.edit_movie img{
+    width: 100%;
+}
+.edit_movie div{
+    margin: 0px 0px 0px 3px;
+}
+/* star line*/
+.star{
+    display: flex;
+    align-items: center;
+    font-size:  medium;
+}
+.star i{
+    margin-right: 3px;
+}
+.star p{
+    margin-top: 15px;
+    color: rgb(255, 255, 255, 0.5);
+}
+.movieContainer .buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.movieContainer button{
+    /* margin: 10px 0px 0px 3px; */
+    background-color: #1b1818;
+    color: white;
+    border: none;
+    cursor: pointer;
+    height: fit-content;
+}
+.movieContainer .buttons button{
+    /* margin: 10px 0px 0px 3px; */
+    background-color: #1b1818;
+    color: white;
+    border: none;
+    cursor: pointer;
+    height: 10%;
+}
+.btn-right{
+    scroll-behavior: smooth;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn-left{
+    scroll-behavior: smooth;
+
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
