@@ -207,10 +207,10 @@ const searching = (searchText) => {
                 //localStorage.setItem('selectedMovieId', movie.ID);
 
                 if (movie.mediaType === 'movie') {
-                    window.location.href = 'MoviePage.html'; // Redirect to movie page
+                    window.location.href = '/MoviePage'; // Redirect to movie page
                     localStorage.setItem('selectedMovieId', movie.ID);
                 } else {
-                    window.location.href = 'artist.html'; // Redirect to artist page
+                    window.location.href = '/artist'; // Redirect to artist page
                     localStorage.setItem('selectedArtistId', movie.ID);
                 }
             });
@@ -253,7 +253,7 @@ function topRatedfn(movies, start) {
         console.log("Clicked movie ID: ", movieID);
         localStorage.setItem("selectedMovieId", movieID);
         // Redirect to movie page
-        window.location.href = "MoviePage.html"; // Change "movie_page.html" to your actual movie page URL
+        window.location.href = "/MoviePage"; // Change "movie_page.html" to your actual movie page URL
       });
     });
 }
@@ -280,7 +280,7 @@ function nowShowingfn(movies, start) {
         console.log("Clicked movie ID: ", movieID);
         localStorage.setItem("selectedMovieId", movieID);
         // Redirect to movie page
-        window.location.href = "MoviePage.html"; // Change "movie_page.html" to your actual movie page URL
+        window.location.href = "/MoviePage"; // Change "movie_page.html" to your actual movie page URL
       });
     });
 }
@@ -306,7 +306,7 @@ function upComingfn(movies, start) {
         console.log("Clicked movie ID: ", movieID);
         localStorage.setItem("selectedMovieId", movieID);
         // Redirect to movie page
-        window.location.href = "MoviePage.html"; // Change "movie_page.html" to your actual movie page URL
+        window.location.href = "/MoviePage"; // Change "movie_page.html" to your actual movie page URL
       });
     });
 }
@@ -349,16 +349,20 @@ function searchItems() {
     });
 }
 document.addEventListener('DOMContentLoaded', function() {
-  
+  var mywatchlist = document.querySelector('.mywatchlist');
   var aboutUs = document.querySelector('.aboutUs');
   var profile = document.querySelector('.profile');
   aboutUs.addEventListener('click', function() {
       
-      window.location.href = 'AboutUs.html';
+      window.location.href = '/AboutUs';
   });
   profile.addEventListener('click', function() {
       
-      window.location.href = 'login.html';
+      window.location.href = '/login';
   });
+  mywatchlist.addEventListener('click', function() {
+      
+    window.location.href = '/mywatchlist';
+});
 });
 

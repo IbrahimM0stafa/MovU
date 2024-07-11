@@ -99,7 +99,7 @@ function Filmographyfn(movies, start) {
             localStorage.setItem("selectedMovieId", movieID);
             
             // Redirect to movie page
-            window.location.href = "MoviePage.html"; // Change "MoviePage.html" to your actual movie page URL
+            window.location.href = "/MoviePage"; // Change "MoviePage.html" to your actual movie page URL
         });
     });
 }

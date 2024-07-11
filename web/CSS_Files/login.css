@@ -2,7 +2,7 @@ body {
     /* display: flex; */ /*8ayrt dih*/
     justify-content: center;
     align-items: center;
-    background-image:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url("WhatsApp Image 2024-03-22 at 00.51.34_e626706f.jpg");
+    background-image:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url("../images/WhatsApp Image 2024-03-22 at 00.51.34_e626706f.jpg");
     background-size: cover;
     background-position: center;
     min-height: 100vh;

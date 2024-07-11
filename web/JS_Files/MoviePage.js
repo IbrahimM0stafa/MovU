@@ -105,7 +105,7 @@ const fetchCast = () => {
                 // Store the cast ID in local storage when clicked
                 localStorage.setItem('selectedArtistId', actor.id);
                 console.log(actor.id);
-                window.location.href = 'artist.html';
+                window.location.href = '/artist';
             });
             
             castContainer.appendChild(actorLink);
@@ -136,7 +136,7 @@ const fetchRecommendations = () => {
                 clicks++;
                 if (clicks === 2) {
                     localStorage.setItem('selectedMovieId', recommendation.id);
-                    window.location.href = 'MoviePage.html'; // Redirect to movie details page
+                    window.location.href = '/MoviePage'; // Redirect to movie details page
                     clicks = 0;
                 }
                 setTimeout(function() {
@@ -204,21 +204,91 @@ document.addEventListener('DOMContentLoaded', function() {
     var login = document.querySelector('.login');
     logo.addEventListener('click', function() {
         
-        window.location.href = 'home.html';
+        window.location.href = '/home';
     });
     home.addEventListener('click', function() {
         
-        window.location.href = 'home.html';
+        window.location.href = '/home';
     });
     aboutUs.addEventListener('click', function() {
         
-        window.location.href = 'AboutUs.html';
+        window.location.href = '/AboutUs';
     });
     login.addEventListener('click', function() {
         
-        window.location.href = 'login.html';
+        window.location.href = '/login';
     });
 });
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('addToWatchlist').addEventListener('click', function(event) {
+        event.preventDefault();
+
+        const selectedMovieId = localStorage.getItem('selectedMovieId');
+
+        if (!selectedMovieId) {
+            alert('No movie selected!');
+            return;
+        }
+
+        fetch('/addToWatchlist', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ movieId: selectedMovieId })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alert('Movie added to watchlist!');
+                document.getElementById('watchlistIcon').classList.remove('fa-plus');
+                document.getElementById('watchlistIcon').classList.add('fa-check');
+            } else {
+                alert('Failed to add movie to watchlist');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('An error occurred while adding the movie to watchlist');
+        });
+    });
+});
+
+
+document.getElementById('ratingForm').addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    const selectedMovieId = localStorage.getItem('selectedMovieId');
+    const rating = document.querySelector('input[name="rating"]:checked').value;
+
+    fetch('/rateMovie', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ movieId: selectedMovieId, rating: rating })
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok ' + response.statusText);
+        }
+        return response.json();
+    })
+    .then(data => {
+        if (data.success) {
+            alert('Movie added to Ratelist!');
+            // window.location.href = '/myratings';
+        } else {
+            console.error('Rating submission failed');
+        }
+    })
+    .catch(error => {
+        alert('failed to rate')
+        console.error('Error:', error);
+        // Display an error message to the user if needed
+    });
+});
+
 
 
 

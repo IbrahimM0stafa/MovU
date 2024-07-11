@@ -29,6 +29,7 @@ header{
 }
 .nav{
     display: flex;
+    margin-right: 40%;
 }
 .nav li{
     list-style: none;

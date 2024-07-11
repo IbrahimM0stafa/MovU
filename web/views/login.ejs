@@ -4,22 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MOVU</title>
-    <link rel="stylesheet" href = "login.css">
+    <link rel="stylesheet" href = "../CSS_Files/login.css">
 </head>
 <body>
     
         <img src="images/MOVU_LOGO.PNG" class="logo">
     
     <div class = "wrapper">
-        <form action = "">
+        <form action="/login" method="POST">
             <h2>Login</h2>
             <div class = "input-box">
                 <span class = "icon"><ion-icon name="person-outline"></ion-icon></span>
-                <input type="text" placeholder="Username" required>
+                <input type="text" placeholder="Username" name="username" required>
             </div>
             <div class = "input-box">
                 <span class = "icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
-                <input type="password" placeholder="Password" required>
+                <input type="password" placeholder="Password" name="password" required>
                 
             </div>
             <div class="forgot-pass">
@@ -33,7 +33,7 @@
     </div>
     <!--<img src="20493446.1.jpg" alt="" class="image1">
     <img src="20493446.2.jpg" alt="" class="image2">-->
-    <script src="login.js"></script>
+    <script src="../Js_Files/login.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
